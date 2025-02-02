@@ -19,7 +19,6 @@ public class MakingChange {
         Arrays.sort(coinsSorted);
         int numWays = 0;
         int remainder = 0;
-
         for(int i = 0; i < coinsSorted.length; i++){
             int[] certainCoins = new int[i + 1];
             certainCoins = Arrays.copyOfRange(coinsSorted, 0, i);
