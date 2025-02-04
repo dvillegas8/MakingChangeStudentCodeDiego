@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * The class Making Change solves a classic problem:
@@ -17,6 +18,10 @@ public class MakingChange {
         // Get the method that uses the least amount of coins with the biggest value
         int[] coinsSorted = coins;
         Arrays.sort(coinsSorted);
+        int totalWays = 0;
+        totalWays = findWays(target, coinsSorted, 0);
+        return totalWays;
+        /*
         int numWays = 0;
         int remainder = 0;
         for(int i = 0; i < coinsSorted.length; i++){
@@ -25,8 +30,28 @@ public class MakingChange {
             numWays += findWays(target, coins);
         }
         return 0;
+
+         */
     }
+    public static int findWays(int target, int[] coins, int index){
+        // Base cases
+        if(target == 0){
+            return 1;
+        }
+        else if(target < 0){
+            return 0;
+        }
+        else if(index >= coins.length){
+            return 0;
+        }
+        int sum = 0;
+        // Recursive step
+        sum = findWays(target - coins[index], coins, index) + findWays(target, coins, index + 1);
+        return sum;
+    }
+    /*
     public static int findWays(int target, int[] coins){
+        /*
         int numWays = 0;
         int remainder = 0;
         int difference = target;
@@ -49,4 +74,5 @@ public class MakingChange {
         }
         return 0;
     }
+    */
 }
