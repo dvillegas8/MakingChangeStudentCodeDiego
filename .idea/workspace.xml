@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bf08351e-8001-407c-880c-49b47a0a4156" name="Changes" comment="commit #1">
+    <list default="true" id="bf08351e-8001-407c-880c-49b47a0a4156" name="Changes" comment="commit #2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WORK_LOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/WORK_LOG.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MakingChange.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MakingChange.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +50,12 @@
   "keyToString": {
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.MakingChangeTest.executor": "Run",
+    "JUnit.MakingChangeTest.testCorrectLarge.executor": "Run",
+    "JUnit.MakingChangeTest.testCorrectLargest.executor": "Run",
     "JUnit.MakingChangeTest.testCorrectSmall.executor": "Run",
+    "JUnit.MakingChangeTest.testEfficient.executor": "Run",
+    "JUnit.MakingChangeTest.testEfficientLarge.executor": "Debug",
+    "JUnit.MakingChangeTest.testEfficientLargest.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -60,32 +64,12 @@
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.MakingChangeTest.testCorrectLargest">
+  <component name="RunManager" selected="JUnit.MakingChangeTest.testEfficientLarge">
     <configuration name="MakingChangeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Making Change Student Code" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MakingChangeTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MakingChangeTest.testCorrectLarge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Making Change Student Code" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MakingChangeTest" />
-      <option name="METHOD_NAME" value="testCorrectLarge" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MakingChangeTest.testCorrectLargest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Making Change Student Code" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MakingChangeTest" />
-      <option name="METHOD_NAME" value="testCorrectLargest" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -100,12 +84,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MakingChangeTest.testEfficient" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Making Change Student Code" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MakingChangeTest" />
+      <option name="METHOD_NAME" value="testEfficient" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MakingChangeTest.testEfficientLarge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Making Change Student Code" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MakingChangeTest" />
+      <option name="METHOD_NAME" value="testEfficientLarge" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MakingChangeTest.testEfficientLargest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Making Change Student Code" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="MakingChangeTest" />
+      <option name="METHOD_NAME" value="testEfficientLargest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MakingChangeTest.testCorrectLargest" />
-        <item itemvalue="JUnit.MakingChangeTest.testCorrectLarge" />
+        <item itemvalue="JUnit.MakingChangeTest.testEfficientLarge" />
         <item itemvalue="JUnit.MakingChangeTest" />
         <item itemvalue="JUnit.MakingChangeTest.testCorrectSmall" />
+        <item itemvalue="JUnit.MakingChangeTest.testEfficientLargest" />
+        <item itemvalue="JUnit.MakingChangeTest.testEfficient" />
       </list>
     </recent_temporary>
   </component>
@@ -134,11 +149,31 @@
       <option name="project" value="LOCAL" />
       <updated>1738538307781</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="commit #2">
+      <option name="closed" value="true" />
+      <created>1738642820753</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1738642820753</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="commit #1" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit #1" />
+    <MESSAGE value="commit #2" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit #2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/MakingChange.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -17,9 +17,14 @@ public class MakingChange {
     public static long countWays(int target, int[] coins) {
         // Get the method that uses the least amount of coins with the biggest value
         int[] coinsSorted = coins;
+        // Memoization
+        int[][] memoizationTable = new int[coins.length][target + 1];
         Arrays.sort(coinsSorted);
         int totalWays = 0;
-        totalWays = findWays(target, coinsSorted, 0);
+        for(int i = 0; i < memoizationTable.length; i++){
+            memoizationTable[i][0] = 1;
+        }
+        totalWays = findWays(target, coinsSorted, 0, memoizationTable);
         return totalWays;
         /*
         int numWays = 0;
@@ -33,7 +38,7 @@ public class MakingChange {
 
          */
     }
-    public static int findWays(int target, int[] coins, int index){
+    public static int findWays(int target, int[] coins, int index, int[][] table){
         // Base cases
         if(target == 0){
             return 1;
@@ -44,9 +49,13 @@ public class MakingChange {
         else if(index >= coins.length){
             return 0;
         }
+        else if(table[index][target] != 0){
+            return table[index][target];
+        }
         int sum = 0;
         // Recursive step
-        sum = findWays(target - coins[index], coins, index) + findWays(target, coins, index + 1);
+        sum = findWays(target - coins[index], coins, index, table) + findWays(target, coins, index + 1, table);
+        table[index][target] = sum;
         return sum;
     }
     /*
