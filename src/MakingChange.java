@@ -18,13 +18,25 @@ public class MakingChange {
         // Get the method that uses the least amount of coins with the biggest value
         int[] coinsSorted = coins;
         // Memoization
-        int[][] memoizationTable = new int[coins.length][target + 1];
-        Arrays.sort(coinsSorted);
-        int totalWays = 0;
+        long[][] memoizationTable = new long[coins.length][target + 1];
         for(int i = 0; i < memoizationTable.length; i++){
             memoizationTable[i][0] = 1;
         }
-        totalWays = findWays(target, coinsSorted, 0, memoizationTable);
+        // Tabulation
+        long[][] tabulationTable = new long[coins.length][target + 1];
+        for(int i = 0; i < tabulationTable.length; i++){
+            tabulationTable[i][0] = 1;
+        }
+        Arrays.sort(coinsSorted);
+        long totalWays = 0;
+        // Tabulation
+        for(int i = 0; i < tabulationTable.length; i++){
+            for(int j = 0; j < tabulationTable[0].length - 1; j++){
+                totalWays = findWaysTabulation(j + 1, coinsSorted, i, tabulationTable);
+            }
+        }
+        // Memoization
+        //totalWays = findWaysMemoization(target, coinsSorted, 0, memoizationTable);
         return totalWays;
         /*
         int numWays = 0;
@@ -38,7 +50,25 @@ public class MakingChange {
 
          */
     }
-    public static int findWays(int target, int[] coins, int index, int[][] table){
+    public static long findWaysTabulation(int target, int[] coins, int index, long[][] table){
+        // Base cases
+        if(target == 0){
+            return 1;
+        }
+        else if(target < 0){
+            return 0;
+        }
+        else if(index < 0){
+            return 0;
+        }
+        else if(table[index][target] != 0){
+            return table[index][target];
+        }
+        // Recursive step
+        table[index][target] = findWaysTabulation(target - coins[index], coins, index, table) + findWaysTabulation(target, coins, index - 1, table);
+        return table[index][target];
+    }
+    public static long findWaysMemoization(int target, int[] coins, int index, long[][] table){
         // Base cases
         if(target == 0){
             return 1;
@@ -52,9 +82,9 @@ public class MakingChange {
         else if(table[index][target] != 0){
             return table[index][target];
         }
-        int sum = 0;
+        long sum = 0;
         // Recursive step
-        sum = findWays(target - coins[index], coins, index, table) + findWays(target, coins, index + 1, table);
+        sum = findWaysMemoization(target - coins[index], coins, index, table) + findWaysMemoization(target, coins, index + 1, table);
         table[index][target] = sum;
         return sum;
     }
