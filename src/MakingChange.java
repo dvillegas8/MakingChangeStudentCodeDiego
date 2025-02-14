@@ -38,17 +38,6 @@ public class MakingChange {
         // Memoization
         //totalWays = findWaysMemoization(target, coinsSorted, 0, memoizationTable);
         return totalWays;
-        /*
-        int numWays = 0;
-        int remainder = 0;
-        for(int i = 0; i < coinsSorted.length; i++){
-            int[] certainCoins = new int[i + 1];
-            certainCoins = Arrays.copyOfRange(coinsSorted, 0, i);
-            numWays += findWays(target, coins);
-        }
-        return 0;
-
-         */
     }
     public static long findWaysTabulation(int target, int[] coins, int index, long[][] table){
         // Base cases
